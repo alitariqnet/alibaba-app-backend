@@ -1,9 +1,11 @@
 package com.AlHassanElectronics.Software.controller;
 
 import com.AlHassanElectronics.Software.Pojo.ErrorResponse;
+import com.AlHassanElectronics.Software.Pojo.UserDto;
 import com.AlHassanElectronics.Software.entity.User;
 import com.AlHassanElectronics.Software.exception.GeneralException;
 import com.AlHassanElectronics.Software.exception.ObjectNotFoundException;
+import com.AlHassanElectronics.Software.mapper.ObjectMapper;
 import com.AlHassanElectronics.Software.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,7 +31,7 @@ public class UserController {
     }
 
     @GetMapping("user")
-    public ResponseEntity<User> getUser(@Validated @RequestParam Long id) throws GeneralException {
+    public ResponseEntity<UserDto> getUser(@Validated @RequestParam Long id) throws GeneralException {
         Optional<User> user = null;
         try {
             user = userService.getUser(id);
@@ -39,7 +41,9 @@ public class UserController {
         } catch (Exception ex) {
             throw new GeneralException(ex);
         }
-        return new ResponseEntity<User>(user.get(), HttpStatus.OK);
+
+        UserDto userDto = ObjectMapper.userToUserDto(user.get());
+        return new ResponseEntity<UserDto>(userDto, HttpStatus.OK);
     }
 
     @GetMapping("users")

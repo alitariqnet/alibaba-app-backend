@@ -16,13 +16,13 @@ public class Shipment {
     @Column(name = "shipment_date")
     private LocalDateTime shipmentTime;
     @Nonnull
-    @Column(name = "adderss")
+    @Column(name = "address")
     private String address;
     @Nonnull
     @Column(name = "city")
     private String city;
     @Nullable
-    @Column(name = "statea")
+    @Column(name = "state")
     private String state;
     @Nonnull
     @Column(name = "country")

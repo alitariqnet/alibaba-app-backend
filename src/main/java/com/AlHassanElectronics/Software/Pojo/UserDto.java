@@ -1,6 +1,8 @@
 package com.AlHassanElectronics.Software.Pojo;
 
 import com.AlHassanElectronics.Software.entity.Order;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonRootName;
 import jakarta.persistence.Column;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
@@ -10,7 +12,8 @@ import org.springframework.data.annotation.CreatedDate;
 import java.time.LocalDate;
 import java.util.LinkedList;
 import java.util.List;
-
+@JsonInclude(value = JsonInclude.Include.NON_NULL)
+@JsonRootName("user")
 public class UserDto {
 
     private Long id;

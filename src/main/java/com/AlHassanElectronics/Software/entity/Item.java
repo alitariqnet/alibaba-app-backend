@@ -15,10 +15,10 @@ public class Item implements Serializable {
     private String name;
     @Column(name = "description")
     private String description;
-    @Column(name = "model")
-    private String model;
-    @Column(name = "company")
-    private String company;
+//    @Column(name = "model")
+//    private String model;
+//    @Column(name = "company")
+//    private String company;
     @Column(name = "price")
     private double price;
 
@@ -47,20 +47,20 @@ public class Item implements Serializable {
         this.description = description;
     }
 
-    public String getModel() {
-        return model;
-    }
-
-    public void setModel(String model) {
-        this.model = model;
-    }
-
-    public String getCompany() {
-        return company;
-    }
-
-    public void setCompany(String company) {
-        this.company = company;
-    }
+//    public String getModel() {
+//        return model;
+//    }
+//
+//    public void setModel(String model) {
+//        this.model = model;
+//    }
+//
+//    public String getCompany() {
+//        return company;
+//    }
+//
+//    public void setCompany(String company) {
+//        this.company = company;
+//    }
 
 }

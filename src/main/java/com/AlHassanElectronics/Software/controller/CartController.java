@@ -1,2 +1,4 @@
-package com.AlHassanElectronics.Software.controller;public class CartController {
+package com.AlHassanElectronics.Software.controller;
+
+public class CartController {
 }

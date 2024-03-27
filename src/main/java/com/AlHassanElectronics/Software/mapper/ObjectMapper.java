@@ -7,8 +7,12 @@ public class ObjectMapper {
     public static UserDto userToUserDto(User user){
         UserDto userDto = new UserDto();
         userDto.setId(user.getId());
-        userDto.setName(user.getName());
+        userDto.setFirstName(user.getFirstName());
+        userDto.setLastName(user.getLastName());
         userDto.setAddress(user.getAddress());
+        userDto.setCity(user.getCity());
+        userDto.setState(user.getState());
+        userDto.setCountry(user.getCountry());
         userDto.setAge(user.getAge());
         userDto.setGender(user.getGender());
         userDto.setEmail(user.getEmail());

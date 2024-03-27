@@ -26,8 +26,8 @@ public class UserController {
     private UserService userService;
 
     @PostMapping("create")
-    public ResponseEntity<User> createUser(@RequestParam String name, @RequestParam String phone, @RequestParam String email, @RequestParam String address) {
-        return new ResponseEntity<User>(userService.createUser(name, phone, email, address), HttpStatus.OK);
+    public ResponseEntity<User> createUser(@RequestParam String username, @RequestParam String password, @RequestParam String firstName, @RequestParam String lastName, @RequestParam String phone, @RequestParam String email, @RequestParam String address, @RequestParam String city, @RequestParam String state, @RequestParam String country) {
+        return new ResponseEntity<User>(userService.createUser(username, password, firstName, lastName, phone, email, address, city, state, country), HttpStatus.OK);
     }
 
     @GetMapping("user")

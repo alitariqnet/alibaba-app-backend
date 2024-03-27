@@ -12,30 +12,25 @@ import org.springframework.data.annotation.CreatedDate;
 import java.time.LocalDate;
 import java.util.LinkedList;
 import java.util.List;
+
 @JsonInclude(value = JsonInclude.Include.NON_NULL)
 @JsonRootName("user")
 public class UserDto {
 
     private Long id;
-
-    private String name;
-
+    private String firstName;
+    private String lastName;
     private int age;
-
     private String gender;
-
     private String phone;
-
     private String email;
-
     private String address;
-
+    private String city;
+    private String state;
+    private String country;
     private String username;
-
     private String password;
-
     private boolean isActive;
-
     private LocalDate createdOn;
 
     private List<Order> orders = new LinkedList<>();
@@ -48,12 +43,44 @@ public class UserDto {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
     }
 
     public int getAge() {

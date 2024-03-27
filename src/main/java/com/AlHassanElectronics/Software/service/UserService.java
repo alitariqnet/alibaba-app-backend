@@ -8,6 +8,7 @@ import com.sun.mail.iap.Response;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
@@ -24,14 +25,15 @@ public class UserService {
         this.userRepository = userRepository;
     }
 
-    public User createUser(String name, String phone, String email, String address) {
-        User user = new User(name, email, phone, address);
+    public User createUser(String username, String password, String firstName, String lastName, String phone, String email, String address, String city, String state, String country) {
+        User user = new User(username , firstName, lastName, email, phone, address, city, state, country);
+        user.setPassword(new BCryptPasswordEncoder().encode(password));
         log.info("Saving a new user..." + user);
         return userRepository.save(user);
     }
 
-    public Optional<User> getUser(Long id) throws GeneralException {
-        Optional<User> user = null;
+    public Optional<User> getUser(Long id) {
+        Optional<User> user = Optional.empty();
         try {
             log.info("Retrieving a user...");
             user = userRepository.findByIdAndIsActiveTrue(id);

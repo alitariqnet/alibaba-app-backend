@@ -1,17 +1,21 @@
 create table users(
 	id serial not null primary key,
-	name varchar(50) not null,
+	first_name varchar(50) not null,
+	last_name varchar(50) not null,
 	email varchar(70) null,
 	phone varchar(15) null,
 	address varchar(200) not null,
+	city varchar(20) not null
+	state varchar(20) not null,
+	country varchar(20) not null,
 	username varchar(40) not null,
 	password text not null,
 	is_active boolean default true,
 	created_on date default now()
 );
 
-insert into users (name,email,phone,address,username,"password") values('Ali Tariq','alibabapk@aol.com',
-	'6856567','22 Shalimar link road Mughalpura','alibaba','pass');
+insert into users (first_name, last_name, email,phone,address,city, state, country, username,"password") values('Ali','Tariq','alibabapk@aol.com',
+	'6856567','22 Shalimar link road Mughalpura','Lahore','Punjab','Country','alibaba','pass');
 
 alter table users drop column created_on;
 alter table users add column created_on timestamp default now();

@@ -13,8 +13,11 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "name")
-    private String name;
+    @Column(name = "first_name")
+    private String firstName;
+
+    @Column(name = "last_name")
+    private String lastName;
 
     @Column(name = "age")
     private int age;
@@ -31,6 +34,12 @@ public class User {
     @Column(name = "address")
     private String address;
 
+    @Column(name = "city")
+    private String city;
+    @Column(name = "state")
+    private String state;
+    @Column(name = "country")
+    private String country;
     @Column(name = "username")
     private String username;
 
@@ -39,7 +48,7 @@ public class User {
 
     @Column(name = "enabled")
     private boolean isActive;
-    
+
     @Column(name = "created_on")
     @CreatedDate
     private LocalDate createdOn;
@@ -51,22 +60,16 @@ public class User {
     public User() {
     }
 
-    public User(String name, String phone, String email, String address) {
-        this.name = name;
-        this.phone = phone;
-        this.email = email;
-        this.address = address;
-        this.username = name;
-        this.password = email.substring(0, 7);
-    }
-
-    public User(String name, String phone, String email, String address, String username, String password) {
-        this.name = name;
-        this.phone = phone;
-        this.email = email;
-        this.address = address;
+    public User(String username, String firstName, String lastName, String phone, String email, String address, String city, String state, String country) {
         this.username = username;
-        this.password = password;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.phone = phone;
+        this.email = email;
+        this.address = address;
+        this.city = city;
+        this.state = state;
+        this.country = country;
     }
 
     public Long getId() {
@@ -77,12 +80,20 @@ public class User {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public int getAge() {
@@ -123,6 +134,30 @@ public class User {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
     }
 
     public String getUsername() {

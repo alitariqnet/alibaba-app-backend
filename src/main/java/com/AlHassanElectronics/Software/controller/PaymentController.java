@@ -1,2 +1,4 @@
-package com.AlHassanElectronics.Software.controller;public class PaymentController {
+package com.AlHassanElectronics.Software.controller;
+
+public class PaymentController {
 }

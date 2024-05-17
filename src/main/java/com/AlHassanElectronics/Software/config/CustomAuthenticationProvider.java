@@ -26,13 +26,13 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
 
     @Autowired
     private UserRepository userRepository;
-    
+
     @Override
     public Authentication authenticate(Authentication authentication) throws AuthenticationException {
         final String username = authentication.getName();
         final String password = authentication.getCredentials().toString();
         Optional<com.AlHassanElectronics.Software.entity.User> user = userRepository.findByUsername(username);
-        
+
         if (user.isPresent() && (!user.get().getUsername().equals(username) || !user.get().getPassword().equals(password))) {
             throw new CustomAuthenticationException("Cannot authenticate, username or password is incorrect");
         }

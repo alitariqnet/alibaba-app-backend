@@ -81,3 +81,8 @@ create table group_members (
         group_id bigint not null,
         constraint fk_group_members_group foreign key(group_id) references groups(id)
 );
+
+create table comments(
+	id serial not null primary key,
+	description text not null
+)

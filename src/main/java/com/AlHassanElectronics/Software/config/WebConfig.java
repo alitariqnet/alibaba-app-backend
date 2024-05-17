@@ -1,5 +1,6 @@
 package com.AlHassanElectronics.Software.config;
 
+import com.AlHassanElectronics.Software.interceptor.CustomInterceptor;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.format.FormatterRegistry;
 import org.springframework.format.datetime.standard.DateTimeFormatterRegistrar;
@@ -51,7 +52,7 @@ public class WebConfig implements WebMvcConfigurer {
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-
+        registry.addInterceptor(new CustomInterceptor());
     }
 
     @Override

@@ -1,16 +1,9 @@
 package com.AlHassanElectronics.Software.service;
 
-import com.AlHassanElectronics.Software.Pojo.ErrorResponse;
 import com.AlHassanElectronics.Software.entity.User;
-import com.AlHassanElectronics.Software.exception.GeneralException;
 import com.AlHassanElectronics.Software.repository.UserRepository;
-import com.sun.mail.iap.Response;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.ExceptionHandler;
 
 import java.util.List;
 import java.util.Optional;
@@ -20,14 +13,15 @@ import java.util.Optional;
 public class UserService {
 
     private final UserRepository userRepository;
-
+    private static int number = 10;
     public UserService(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
 
     public User createUser(String username, String password, String firstName, String lastName, String phone, String email, String address, String city, String state, String country) {
         User user = new User(username , firstName, lastName, email, phone, address, city, state, country);
-        user.setPassword(new BCryptPasswordEncoder().encode(password));
+        user.setPassword(password);
+//        user.setPassword(new BCryptPasswordEncoder().encode(password));
         log.info("Saving a new user..." + user);
         return userRepository.save(user);
     }

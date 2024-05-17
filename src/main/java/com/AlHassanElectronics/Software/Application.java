@@ -55,4 +55,5 @@ public class Application {
         customEventPublisher = new CustomEventPublisher();
         customEventPublisher.publishCustomEvent("Application started...");
     }
+    public int number = 10;
 }

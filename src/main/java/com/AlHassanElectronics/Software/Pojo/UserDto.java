@@ -1,13 +1,7 @@
 package com.AlHassanElectronics.Software.Pojo;
 
-import com.AlHassanElectronics.Software.entity.Order;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonRootName;
-import jakarta.persistence.Column;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToMany;
-import org.hibernate.annotations.AnyDiscriminator;
-import org.springframework.data.annotation.CreatedDate;
 
 import java.time.LocalDate;
 import java.util.LinkedList;
@@ -32,8 +26,6 @@ public class UserDto {
     private String password;
     private boolean isActive;
     private LocalDate createdOn;
-
-    private List<Order> orders = new LinkedList<>();
 
     public Long getId() {
         return id;
@@ -155,11 +147,4 @@ public class UserDto {
         this.createdOn = createdOn;
     }
 
-    public List<Order> getOrders() {
-        return orders;
-    }
-
-    public void setOrders(List<Order> orders) {
-        this.orders = orders;
-    }
 }

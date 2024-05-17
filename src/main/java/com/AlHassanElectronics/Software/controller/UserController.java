@@ -50,7 +50,10 @@ public class UserController {
     public ResponseEntity<List<User>> getUsers() {
         return new ResponseEntity<List<User>>(userService.getUsers(), HttpStatus.OK);
     }
-
+    @GetMapping("users/v2")
+    public List<User> getUsersV2() {
+        return userService.getUsers();
+    }
     @DeleteMapping("user")
     public ResponseEntity<String> deleteUser(@RequestParam Long id) {
         return new ResponseEntity<String>(("User with id " + id + " deleted"), HttpStatus.OK);

@@ -252,10 +252,15 @@
 <!--			<artifactId>spring-modulith-starter-test</artifactId>-->
 <!--			<scope>test</scope>-->
 <!--		</dependency>-->
+<!--		<dependency>-->
+<!--			<groupId>org.springframework.security</groupId>-->
+<!--			<artifactId>spring-security-test</artifactId>-->
+<!--			<scope>test</scope>-->
+<!--		</dependency>-->
 		<dependency>
-			<groupId>org.springframework.security</groupId>
-			<artifactId>spring-security-test</artifactId>
-			<scope>test</scope>
+			<groupId>com.auth0</groupId>
+			<artifactId>java-jwt</artifactId>
+			<version>4.2.1</version>
 		</dependency>
 	</dependencies>
 <!--	<dependencyManagement>-->
@@ -286,19 +291,6 @@
 
 	<build>
 		<plugins>
-			<!--<plugin>
-				<groupId>dev.hilla</groupId>
-				<artifactId>hilla-maven-plugin</artifactId>
-				<version>${hilla.version}</version>
-				<executions>
-					<execution>
-						<id>frontend</id>
-						<goals>
-							<goal>prepare-frontend</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
@@ -310,7 +302,7 @@
 						</exclude>
 					</excludes>
 				</configuration>
-			</plugin>-->
+			</plugin>
 		</plugins>
 	</build>
 	<repositories>
@@ -329,7 +321,7 @@
 			<id>production</id>
 			<build>
 				<plugins>
-					<!--<plugin>
+					<plugin>
 						<groupId>dev.hilla</groupId>
 						<artifactId>hilla-maven-plugin</artifactId>
 						<version>${hilla.version}</version>
@@ -346,7 +338,7 @@
 							</execution>
 						</executions>
 					</plugin>
-					<plugin>
+<!--					<plugin>
 						<groupId>com.vaadin</groupId>
 						<artifactId>vaadin-maven-plugin</artifactId>
 						<version>${vaadin.version}</version>

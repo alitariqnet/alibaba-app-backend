@@ -1,5 +1,6 @@
 package com.AlHassanElectronics.Software.entity;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import jakarta.persistence.*;
 import org.springframework.data.annotation.CreatedDate;
 
@@ -8,6 +9,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "users")
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -42,7 +44,7 @@ public class User {
     private String country;
     @Column(name = "username")
     private String username;
-
+    @Transient
     @Column(name = "password")
     private String password;
 
@@ -52,10 +54,6 @@ public class User {
     @Column(name = "created_on")
     @CreatedDate
     private LocalDate createdOn;
-
-    @OneToMany
-    @JoinColumn(name = "order_id", referencedColumnName = "id")
-    private List<Order> orders;
 
     public User() {
     }

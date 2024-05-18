@@ -5,7 +5,7 @@ create table users(
 	email varchar(70) null,
 	phone varchar(15) null,
 	address varchar(200) not null,
-	city varchar(20) not null
+	city varchar(20) not null,
 	state varchar(20) not null,
 	country varchar(20) not null,
 	username varchar(40) not null,
@@ -45,8 +45,8 @@ insert into items(title,company,mfg_date,exp_date, price,batch_number) values
 ('Keyboard','A4Tech','1999-1-1','2002-12-20','100','09583893');
 
 
-insert into customer (name,email,phone,address) values
-('Ali','alibaba@hotmail.com','123456','Shalamar link road');
+-- insert into customer (name,email,phone,address) values
+-- ('Ali','alibaba@hotmail.com','123456','Shalamar link road');
 
 create table users(
         id serial not null primary key,

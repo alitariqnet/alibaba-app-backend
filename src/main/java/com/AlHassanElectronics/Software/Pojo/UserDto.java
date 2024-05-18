@@ -24,6 +24,7 @@ public class UserDto {
     private String country;
     private String username;
     private String password;
+    private String matchingPassword;
     private boolean isActive;
     private LocalDate createdOn;
 

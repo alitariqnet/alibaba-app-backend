@@ -44,7 +44,7 @@ public class User {
     private String country;
     @Column(name = "username")
     private String username;
-    @Transient
+
     @Column(name = "password")
     private String password;
 

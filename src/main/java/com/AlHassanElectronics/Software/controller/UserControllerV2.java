@@ -11,12 +11,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.List;
 
 @Controller
-@RequestMapping("/api")
+@RequestMapping("/api/user2")
 public class UserControllerV2 {
     @Autowired
     private UserService userService;
     private int number = 10;
-    @GetMapping("users")
+    @GetMapping("/users")
     @ModelAttribute("users")
     public List<User> getUsersV2() {
         return userService.getUsers();

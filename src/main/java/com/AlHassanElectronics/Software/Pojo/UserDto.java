@@ -132,6 +132,14 @@ public class UserDto {
         this.password = password;
     }
 
+    public String getMatchingPassword() {
+        return matchingPassword;
+    }
+
+    public void setMatchingPassword(String matchingPassword) {
+        this.matchingPassword = matchingPassword;
+    }
+
     public boolean isActive() {
         return isActive;
     }

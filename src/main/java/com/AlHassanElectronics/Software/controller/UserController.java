@@ -19,18 +19,18 @@ import java.util.Optional;
 
 @Slf4j
 @RestController
-@RequestMapping("/")
+@RequestMapping("/api/user")
 public class UserController {
 
     @Autowired
     private UserService userService;
 
-    @PostMapping("create")
+    @PostMapping("/create")
     public ResponseEntity<User> createUser(@RequestParam String username, @RequestParam String password, @RequestParam String firstName, @RequestParam String lastName, @RequestParam String phone, @RequestParam String email, @RequestParam String address, @RequestParam String city, @RequestParam String state, @RequestParam String country) {
         return new ResponseEntity<User>(userService.createUser(username, password, firstName, lastName, phone, email, address, city, state, country), HttpStatus.OK);
     }
 
-    @GetMapping("user")
+    @GetMapping("/user")
     public ResponseEntity<UserDto> getUser(@Validated @RequestParam Long id) throws GeneralException {
         Optional<User> user = null;
         try {
@@ -46,15 +46,15 @@ public class UserController {
         return new ResponseEntity<UserDto>(userDto, HttpStatus.OK);
     }
 
-    @GetMapping("users")
+    @GetMapping("/users")
     public ResponseEntity<List<User>> getUsers() {
         return new ResponseEntity<List<User>>(userService.getUsers(), HttpStatus.OK);
     }
-    @GetMapping("users/v2")
+    @GetMapping("/users/v2")
     public List<User> getUsersV2() {
         return userService.getUsers();
     }
-    @DeleteMapping("user")
+    @DeleteMapping("/user")
     public ResponseEntity<String> deleteUser(@RequestParam Long id) {
         return new ResponseEntity<String>(("User with id " + id + " deleted"), HttpStatus.OK);
     }

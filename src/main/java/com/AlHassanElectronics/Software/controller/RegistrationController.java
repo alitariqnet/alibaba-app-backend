@@ -8,9 +8,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.context.request.WebRequest;
 
 @Controller
-@RequestMapping(name = "")
+@RequestMapping(name = "/api/registration")
 public class RegistrationController {
-    @GetMapping("/user/registration")
+    @GetMapping("/user")
     public String showRegistrationForm(WebRequest request, Model model) {
         UserDto userDto = new UserDto();
         model.addAttribute("user", userDto);

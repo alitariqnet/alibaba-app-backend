@@ -3,6 +3,8 @@ package com.AlHassanElectronics.Software;
 import com.AlHassanElectronics.Software.custom.CustomEventPublisher;
 import com.AlHassanElectronics.Software.repository.UserRepository;
 import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -13,6 +15,8 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.http.ResponseEntity;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.web.client.RestTemplate;
+
+
 //import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 @Slf4j
@@ -21,7 +25,7 @@ import org.springframework.web.client.RestTemplate;
 @EnableConfigurationProperties
 @SpringBootApplication
 public class Application {
-
+    private static Logger log = LoggerFactory.getLogger("Application");
     private static CustomEventPublisher customEventPublisher;
 
     public static void main(String[] args) {
@@ -55,5 +59,5 @@ public class Application {
         customEventPublisher = new CustomEventPublisher();
         customEventPublisher.publishCustomEvent("Application started...");
     }
-    public int number = 10;
+
 }

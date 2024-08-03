@@ -1,8 +1,11 @@
 package com.AlHassanElectronics.Software.service;
 
+import com.AlHassanElectronics.Software.Application;
 import com.AlHassanElectronics.Software.entity.User;
 import com.AlHassanElectronics.Software.repository.UserRepository;
 import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -12,8 +15,10 @@ import java.util.Optional;
 @Service(value = "userService")
 public class UserService {
 
+    private static final Logger log = LoggerFactory.getLogger(UserService.class);
+
     private final UserRepository userRepository;
-    private static int number = 10;
+
     public UserService(UserRepository userRepository) {
         this.userRepository = userRepository;
     }

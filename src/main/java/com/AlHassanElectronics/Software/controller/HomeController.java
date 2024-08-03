@@ -17,7 +17,7 @@ import java.util.logging.Logger;
 @RequestMapping("/api/home")
 public class HomeController implements IGTVGController {
 
-    private final Logger log = java.util.logging.Logger.getLogger("Homecontrollre");
+    private final Logger log = java.util.logging.Logger.getLogger("Homecontroller");
     @Override
     public void process(HttpServletRequest request, HttpServletResponse response, ServletContext servletContext, ITemplateEngine templateEngine) {
         log.info("inside process method");

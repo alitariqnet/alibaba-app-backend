@@ -23,8 +23,7 @@ import org.springframework.web.client.RestTemplate;
 @EnableConfigurationProperties
 @SpringBootApplication
 public class Application {
-
-    private static final Logger log = LoggerFactory.getLogger(Application.class);
+    private static Logger log = LoggerFactory.getLogger("Application");
     private static CustomEventPublisher customEventPublisher;
 
     public static void main(String[] args) {
@@ -59,5 +58,4 @@ public class Application {
         customEventPublisher.publishCustomEvent("Application started...");
     }
 
-    public int number = 10;
 }

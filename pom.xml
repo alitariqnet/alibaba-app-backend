@@ -14,7 +14,7 @@
 	<name>Application</name>
 	<description>Al-Hassan electronics web app</description>
 	<properties>
-		<java.version>1.8</java.version>
+		<java.version>17</java.version>
 		<hilla.version>2.1.4</hilla.version>
 		<vaadin.version>24.1.4</vaadin.version>
 	</properties>
@@ -346,7 +346,7 @@
 							</execution>
 						</executions>
 					</plugin>
-<!--					<plugin>
+						<plugin>
 						<groupId>com.vaadin</groupId>
 						<artifactId>vaadin-maven-plugin</artifactId>
 						<version>${vaadin.version}</version>
@@ -360,7 +360,7 @@
 								</goals>
 							</execution>
 						</executions>
-					</plugin>-->
+					</plugin>
 				</plugins>
 			</build>
 		</profile>
